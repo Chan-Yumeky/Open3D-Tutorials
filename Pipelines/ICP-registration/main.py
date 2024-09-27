@@ -66,7 +66,7 @@ def draw_registration_result(source: o3d.geometry.PointCloud,
                                       lookat=[1.6784, 2.0612, 1.4451],
                                       up=[-0.3402, -0.9189, -0.1996])
 
-def load_point_clouds() -> tuple:
+def load_point_clouds() -> tuple[o3d.geometry.PointCloud, o3d.geometry.PointCloud]:
     """
     Load the source and target point clouds from specified file paths.
 

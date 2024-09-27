@@ -58,14 +58,24 @@ def apply_noise(pcd: o3d.geometry.PointCloud, mu: float, sigma: float) -> o3d.ge
     return noisy_pcd
 
 
+def load_point_clouds() -> tuple[o3d.geometry.PointCloud, o3d.geometry.PointCloud]:
+    """
+    Load the source and target point clouds from specified file paths.
+
+    Returns:
+        tuple: A tuple containing the source and target point clouds.
+    """
+    source = o3d.io.read_point_cloud("../data/cloud_bin_0.pcd")
+    target = o3d.io.read_point_cloud("../data/cloud_bin_1.pcd")
+    return source, target
+
+
 def main():
     # ---------------------------------------------
     #       Load Example Point Clouds 
     # ---------------------------------------------
-    # Load example point clouds for ICP registration
-    demo_icp_pcds = o3d.data.DemoICPPointClouds()
-    source = o3d.io.read_point_cloud(demo_icp_pcds.paths[0])  # Load source point cloud
-    target = o3d.io.read_point_cloud(demo_icp_pcds.paths[1])  # Load target point cloud
+    # Load point clouds
+    source, target = load_point_clouds()
 
     # Initial transformation matrix for alignment
     trans_init = np.asarray([[0.862, 0.011, -0.507, 0.5],
