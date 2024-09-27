@@ -11,13 +11,13 @@ A collection of tutorials and examples for 3D data processing using the [Open3D]
    ```
 
 2. **Create a virtual environment**:
-   Ensure Python 3 iis installed nstalled, along with the `venv` module.
+   Ensure Python 3 is installed, along with the `venv` module.
    ```bash
    sudo apt update
    sudo apt install python3 python3-venv
    ```
 
-   Now, create a virtual environment named `.open3d-env`:
+   Create a virtual environment named `.open3d-env`:
    ```bash
    python3 -m venv .open3d-env
    ```
